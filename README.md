@@ -11,27 +11,20 @@ Automatisation de la Creation API Gateway pour GCP avec script Bash by PapiOPs
   export CONFIG_NAME= "first-api-config"
 ```
 ---
-## Papi 1 : Deployer backend
-- Deployer l'api backend dans service GCP  
-  👉 Service Cloud Run :
+## Papi 1 : Activer services GCP
 
   ```bash
-  gcloud builds submit ./path/to/app/Dockerfile --tag gcr.io/$PROJECT_ID/$API_NAME
-  gcloud run deploy $API_NAME --image=gcr.io/$PROJECT_ID/$API_NAME \
-    --platform=managed --region=$REGION --allow-unauthenticated
+      gcloud services enable \
+      apigateway.googleapis.com \
+      servicemanagement.googleapis.com \
+      servicecontrol.googleapis.com \
+      run.googleapis.com \
+      iamcredentials.googleapis.com \
+      compute.googleapis.com \
+      --project=$PROJECT_ID
   ```
-
-- Noter URL publique:
-  👉 Recuperation URL :
-
-  ```bash
-  gcloud run services describe $API_NAME \
-  --platform=managed --region=$REGION \
-  --format="value(status.url)"
-   ```
-
+  
 ---
-
 ## Papi 2: Creer API
 
 - Faut creer l'API s'il n'a pas encore cree
