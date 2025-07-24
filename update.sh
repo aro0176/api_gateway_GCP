@@ -2,12 +2,12 @@
 set -e
 
 PROJECT_ID=$(gcloud config get-value project)
-REGION="europe-west1"
-API_NAME="peer-api-run"
-GATEWAY_NAME="api-backend-run"
-CONFIG_NAME="old-config-run"
-OPENAPI_SPEC="./swaggesecure.yaml"
-NEW_CONFIG_NAME="peer-config-run-apikey"
+REGION=$REGION 
+API_NAME=$API_NAME 
+GATEWAY_NAME=$API_GATEWAY 
+CONFIG_NAME=$API_CONFIG 
+OPENAPI_SPEC="./swagger.yaml"
+NEW_CONFIG_NAME=$NEW_API_CONFIG
 SERVICE_ACCOUNT=$SERVICE_ACCOUNT
 
 echo "Creation nouvelle config API avec host corrige: $NEW_CONFIG_NAME"
