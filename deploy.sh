@@ -8,7 +8,7 @@ GATEWAY_NAME=$API_GATEWAY
 CONFIG_NAME=$API_CONFIG 
 OPENAPI_SPEC="./swagger.yaml"
 NEW_CONFIG_NAME=$NEW_API_CONFIG
-SERVICE_ACCOUNT=$SERVICE_ACCOUNT
+SERVICE_ACCOUNT=$SERVICE_ACCOUNT    # Service account qui a le role run.invoker
 
 
 echo "Activation des services necessaires..."
@@ -84,6 +84,6 @@ echo "describe api for enable"
 gcloud api-gateway apis describe $API_NAME --project=$PROJECT_ID
 
 
-echo "activer service enable managedservice Si on veut utiliser API_KEY pour auth"
+echo "activer service enable managedservice Si on veut utiliser API_KEY | security active dans swagger"
 echo "gcloud services enable xxxxxxxxxxxxx.apigateway.esanandro-env-prod-evtc.cloud.goog"
 echo "SURA SURA PAPI"
