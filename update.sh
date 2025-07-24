@@ -8,14 +8,14 @@ GATEWAY_NAME="api-backend-run"
 CONFIG_NAME="old-config-run"
 OPENAPI_SPEC="./swaggesecure.yaml"
 NEW_CONFIG_NAME="peer-config-run-apikey"
-
+SERVICE_ACCOUNT=$SERVICE_ACCOUNT
 
 echo "Creation nouvelle config API avec host corrige: $NEW_CONFIG_NAME"
 gcloud api-gateway api-configs create $NEW_CONFIG_NAME \
   --api=$API_NAME \
   --openapi-spec=$OPENAPI_SPEC \
   --project=$PROJECT_ID \
-  --backend-auth-service-account="sa-cloudrun-1@esanandro-env-prod-evtc.iam.gserviceaccount.com"
+  --backend-auth-service-account=$SERVICE_ACCOUNT 
 
 echo "MAJ du Gateway $GATEWAY_NAME"
 gcloud api-gateway gateways update $GATEWAY_NAME \
