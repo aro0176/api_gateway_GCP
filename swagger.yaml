@@ -18,8 +18,8 @@ produces:
   - text/plain
 
 x-google-backend:
-  address: https://demo-run-projectID.us-central1.run.app
-  jwt_audience: https://demo-run-projectID.us-central1.run.app
+  address: https://demo-run-projectID.us-central1.run.app     #exemple d'URL de Cloud Run
+  jwt_audience: https://demo-run-projectID.us-central1.run.app    #exemple d'URL de Cloud Run
   protocol: h2
 
 securityDefinitions:
