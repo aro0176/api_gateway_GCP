@@ -72,15 +72,15 @@ Automatisation de la Creation API Gateway pour GCP avec script Bash by PapiOPs
 ```yaml
 swagger: "2.0"
 info:
-  title: toavina script
-  description: API Gateway by toavina
+  title: papi script
+  description: API Gateway by papiOps
   version: 1.0.0
 host: {{URL_GATEWAY}}    #Change url par url publique du GATEWAY
 paths:
   /endpoint:
     get:
-      summary: Say Hello
-      operationId: hello
+      summary: Coucou
+      operationId: getendpoint
       responses:
         '200':
           description: OK
