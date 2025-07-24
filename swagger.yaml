@@ -1,0 +1,24 @@
+swagger: "2.0"
+info:
+  title: Demo API
+  description: |
+    Template OpenAPI pour API GATEWAY GCP 
+            ###  BY PAPIOPS  ### 
+  version: 1.0.0
+host: papiops.api
+paths:
+  /kaiza:
+    get:
+      summary: Lazao hoe Manahoana
+      operationId: kaiza
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+      x-google-backend:
+        address: {{URL_BACKEND}}   # Changer cette variable par le vrai URL de votre service Cloud Run
+        protocol: h2
+x-google-endpoints:
+- name: papiops.api 
+  allowCors: true
