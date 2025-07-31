@@ -1,0 +1,47 @@
+swagger: "2.0"
+info:
+  title: Demo API
+  description: |
+    Template OpenAPI pour API GATEWAY GCP 
+            ###  BY PAPIOPS  ### 
+  version: 1.0.0
+
+host: papiops.api
+
+basePath: "/"
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+  - text/plain
+
+x-google-backend:
+  address: https://demo-run-projectID.us-central1.run.app     #exemple d'URL de Cloud Run
+  jwt_audience: https://demo-run-projectID.us-central1.run.app    #exemple d'URL de Cloud Run
+  protocol: h2
+
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: key
+    in: query
+
+security:
+  - api_key: []
+
+paths:
+  /kaiza:
+    get:
+      summary: Lazao hoe Manahoana
+      operationId: kaiza
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+
+x-google-endpoints:
+- name: papiops.api 
+  allowCors: true
