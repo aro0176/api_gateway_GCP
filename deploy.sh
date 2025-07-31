@@ -32,6 +32,7 @@ gcloud api-gateway api-configs create $CONFIG_NAME \
   --api=$API_NAME \
   --openapi-spec=$OPENAPI_SPEC \
   --project=$PROJECT_ID \
+  --backend-auth-service-account=$SERVICE_ACCOUNT \
   || echo "La config $CONFIG_NAME existe peut-être déjà, passage à la suite..."
 
 
